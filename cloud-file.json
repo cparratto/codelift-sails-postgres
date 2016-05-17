@@ -28,7 +28,7 @@
           "protocol": "tcp",
           "inner_port": 1337,
           "published": true,
-          "outer_port": 3346
+          "outer_port": 5073
         }
       ],
       "run_command": "node app.js --prod"

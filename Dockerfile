@@ -6,6 +6,7 @@ ENV PORT="1337" \
     NODE_ENV="production" \
     NODE_VERSION="4.2.0"
 
+COPY . /app/
 RUN git clone https://github.com/tj/n.git ~/.n \
     && cd ~/.n \
     && make install \
@@ -14,7 +15,6 @@ RUN git clone https://github.com/tj/n.git ~/.n \
 RUN mkdir -p /app
 RUN npm install -g sails
 WORKDIR /app
-COPY . /app/
 RUN rm -rf ./node_modules \
     && npm install --production
 
