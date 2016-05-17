@@ -1,0 +1,57 @@
+{
+  "services": [
+    {
+      "name": "app",
+      "linked_to_service": [
+        {
+          "name": "db",
+          "to_service": "db"
+        }
+      ],
+      "container_envvars": [
+        {
+          "key": "POSTGRES_PASSWORD",
+          "value": "Tv5qs6R5O0i7KD7uDI1ceg"
+        },
+        {
+          "key": "NODE_ENV",
+          "value": "production"
+        }
+      ],
+      "image": "",
+      "target_num_containers": 1,
+      "sequential_deployment": true,
+      "autorestart": "ALWAYS",
+      "autoredeploy": true,
+      "container_ports": [
+        {
+          "protocol": "tcp",
+          "inner_port": 1337,
+          "published": true,
+          "outer_port": 4345
+        }
+      ],
+      "run_command": "node app.js --prod"
+    },
+    {
+      "name": "db",
+      "image": "postgres",
+      "target_num_containers": 1,
+      "sequential_deployment": true,
+      "container_ports": [
+        {
+          "protocol": "tcp",
+          "inner_port": 5432,
+          "published": true
+        }
+      ],
+      "container_envvars": [
+        {
+          "key": "POSTGRES_PASSWORD",
+          "value": "Tv5qs6R5O0i7KD7uDI1ceg"
+        }
+      ]
+    }
+  ],
+  "name": "cparrattocodelift-sails-postgres"
+}
