@@ -2,6 +2,11 @@
   "services": [
     {
       "name": "app",
+      "image": "",
+      "target_num_containers": 1,
+      "sequential_deployment": true,
+      "autorestart": "ALWAYS",
+      "autoredeploy": true,
       "linked_to_service": [
         {
           "name": "db",
@@ -11,24 +16,19 @@
       "container_envvars": [
         {
           "key": "POSTGRES_PASSWORD",
-          "value": "Tv5qs6R5O0i7KD7uDI1ceg"
+          "value": "65FKwomAy6k_A3Ki6kvMiw"
         },
         {
           "key": "NODE_ENV",
           "value": "production"
         }
       ],
-      "image": "",
-      "target_num_containers": 1,
-      "sequential_deployment": true,
-      "autorestart": "ALWAYS",
-      "autoredeploy": true,
       "container_ports": [
         {
           "protocol": "tcp",
           "inner_port": 1337,
           "published": true,
-          "outer_port": 4345
+          "outer_port": 3346
         }
       ],
       "run_command": "node app.js --prod"
@@ -48,7 +48,7 @@
       "container_envvars": [
         {
           "key": "POSTGRES_PASSWORD",
-          "value": "Tv5qs6R5O0i7KD7uDI1ceg"
+          "value": "65FKwomAy6k_A3Ki6kvMiw"
         }
       ]
     }

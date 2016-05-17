@@ -2,20 +2,20 @@
   "container_definitions": [
     {
       "name": "app",
+      "image": "",
       "links": [
         "db"
       ],
       "environment": [
         {
           "name": "POSTGRES_PASSWORD",
-          "value": "Tv5qs6R5O0i7KD7uDI1ceg"
+          "value": "65FKwomAy6k_A3Ki6kvMiw"
         },
         {
           "name": "NODE_ENV",
           "value": "production"
         }
       ],
-      "image": "",
       "port_mappings": [
         {
           "protocol": "tcp",
@@ -42,7 +42,7 @@
       "environment": [
         {
           "name": "POSTGRES_PASSWORD",
-          "value": "Tv5qs6R5O0i7KD7uDI1ceg"
+          "value": "65FKwomAy6k_A3Ki6kvMiw"
         }
       ]
     }
